@@ -35,9 +35,9 @@ public:
 class C
 {
 private:
-    A a;
-    B b;
     int c;
+    B b;
+    A a;
 
 public:
     C()

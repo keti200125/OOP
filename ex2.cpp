@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cstring>
+#include<fstream>
 
 class Book {
 private:
@@ -41,6 +42,8 @@ public:
     void print() const {
         std::cout << "[Print] Book Title: " << title << std::endl;
     }
+
+    
 };
 
 int main() {
@@ -49,7 +52,7 @@ int main() {
     Book b3("Brave New World"); // Constructor
 
     b3 = b1;  // Operator=
-    b1.~Book();
+    // b1.~Book();
     b2.print();
     return 0;
 }

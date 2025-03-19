@@ -3,6 +3,7 @@
 
 class Book
 {
+private:
     char *title;
 
     void free()
@@ -26,7 +27,7 @@ public:
 
     ~Book()
     {
-        std::cout << "[Destructor] Destroying Book: " << title << std::endl;
+       std::cout << "[Destructor] Destroying Book: " << title << std::endl;
         free();
     }
 
@@ -42,7 +43,6 @@ int main()
     Book b2 = b1; // Неявен (implicit) copy constructor -> shallow copy (повърхностно копиране)
 
     b1.print();
-
     b2.print();
     return 0;
 }
