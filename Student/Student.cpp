@@ -3,21 +3,9 @@
 
 void Student::free()
 {
-    if (mName)
-    {
-        delete[] mName;
-        mName = nullptr;
-    }
-    if (mGrades)
-    {
-        delete[] mGrades;
-        mGrades = nullptr;
-    }
-    if (mQuote)
-    {
-        delete[] mQuote;
-        mQuote = nullptr;
-    }
+    if (mName) { delete[] mName; mName = nullptr; }
+    if (mGrades) { delete[] mGrades; mGrades = nullptr; }
+    if (mQuote) { delete[] mQuote; mQuote = nullptr; }
     mCountGrades = 0;
     mAverageGrade = 0.0;
 }
