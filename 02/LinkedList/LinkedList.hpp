@@ -16,9 +16,11 @@ private:
             this->data = data;
             next = nullptr;
         }
+        
     };
 
     Node *head;
+    Node* tail;
 
 public:
     LinkedList();
@@ -27,6 +29,11 @@ public:
     LinkedList &operator=(const LinkedList &other);
     ~LinkedList();
 
+    void push_front(int data);
+    void pop_front();
+
+    int& operator[](size_t index);
+    
     void print();
 
 private:

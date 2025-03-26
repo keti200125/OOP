@@ -30,6 +30,34 @@ LinkedList::~LinkedList()
     free();
 }
 
+void LinkedList::push_front(int data)
+{
+    Node* newNode = new Node(data);
+    newNode->next = this->head;
+    this->head = newNode;
+}
+
+void LinkedList::pop_front()
+{
+    if(!this->head)
+    {
+        return;
+    }
+    Node* toDelete = this->head;
+    this->head = head->next;
+    delete toDelete;
+}
+
+int &LinkedList::operator[](size_t index)
+{
+    Node* curr = head;
+    for(int i=0;i<index;i++)
+    {
+        curr = curr->next;
+    }
+    return curr->data;
+}
+
 void LinkedList::print()
 {
     Node* it = head;
@@ -38,7 +66,9 @@ void LinkedList::print()
         std::cout<<it->data<<" ";
         it = it->next;
     }
+    std::cout<<std::endl;
 }
+
 
 void LinkedList::copy(const LinkedList &other)
 {
