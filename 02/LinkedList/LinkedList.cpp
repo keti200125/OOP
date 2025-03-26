@@ -48,6 +48,21 @@ void LinkedList::pop_front()
     delete toDelete;
 }
 
+void LinkedList::push_back(int data)
+{
+    Node* newNode = new Node(data);
+
+    if (!head)
+    {
+        head = tail = newNode;
+    }
+    else
+    {
+        tail->next = newNode;
+        tail = newNode;
+    }
+}
+
 int &LinkedList::operator[](size_t index)
 {
     Node* curr = head;
@@ -88,6 +103,7 @@ void LinkedList::copy(const LinkedList &other)
         lastCreated = lastCreated->next;
         currentOther = currentOther->next;
     }
+
 }
 
 void LinkedList::free()

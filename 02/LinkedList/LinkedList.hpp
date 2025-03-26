@@ -20,7 +20,6 @@ private:
     };
 
     Node *head;
-    Node* tail;
 
 public:
     LinkedList();
@@ -31,6 +30,7 @@ public:
 
     void push_front(int data);
     void pop_front();
+    void push_back(int data);
 
     int& operator[](size_t index);
     
